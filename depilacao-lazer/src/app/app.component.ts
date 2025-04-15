@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgIf } from '@angular/common'; // <-- IMPORTANTE!
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true, // se estiver usando standalone (Angular 17+)
+  imports: [NgIf],  // <-- Aqui está o segredo
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'depilacao-lazer';
+  mostrarAvulsos = false;
+  mostrarPacotes = false;
+  mostrarCombos = false;
 }
+
+
